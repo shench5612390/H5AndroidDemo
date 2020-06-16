@@ -89,6 +89,6 @@ mWebView.setWebChromeClient(new WebChromeClient() {
  需要监听以上方法，兼容多版本Android。       
 ## 总结  
   H5调用Android拍照和摄像以及选取相册，需要html文件里使用input标签，Android原生监听webview回调，做出相应处理。效果如下所示：
-![H5调用Android拍照和摄像以及选取相册效果图.jpg](https://upload-images.jianshu.io/upload_images/2915863-1ab1a887044d1c4c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)  
+![H5调用Android拍照和摄像以及选取相册效果图.jpg](result.jpg)  
 
 
