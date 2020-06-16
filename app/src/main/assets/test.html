@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0">
+    <title>图片上传</title>
+</head>
+<style>
+</style>
+<body id="body">
+<div>
+    <img id="img" style="width:100px;height:100px"/>
+</div>
+<div>
+    <video id="showVideo" style="width:100px;height:100px"></video>
+</div>
+<div>
+    <img id="img2" style="width:100px;height:100px"/>
+</div>
+<div>
+    <span>拍照</span><input type="file" capture="camera" accept="image/*" id="photo" placeholder="拍照"
+                          onchange="changePhoto()"/>
+</div>
+<div>
+    <span>摄像</span><input type="file" capture="camcorder" accept="video/*" id="video"
+                          placeholder="摄像" onchange="changeVideo()"/>
+</div>
+<div>
+    <span>相册</span><input type="file" accept="image/*" id="picture" placeholder="相册"
+                          onchange="changePicture()"/>
+</div>
+
+</body>
+<script type="text/javascript">
+    setTimeout(Showpage, 1);
+
+    function Showpage() {
+        document.getElementById("body").style.visibility = 'visible'
+    }
+    function changePhoto(){
+        var file = document.getElementById("photo");
+        var fileList = file.files; //获取的图片文件
+        console.log('fileList=', fileList);
+        for (var i = 0; i < fileList.length; i++) {
+             var imgUrl = window.URL.createObjectURL(fileList[i]);
+             console.log('imgUrl=', imgUrl);
+             document.getElementById("img").setAttribute("src", imgUrl);
+        }
+    }
+    function changeVideo(){
+        var file = document.getElementById("video");
+        var fileList = file.files; //获取的图片文件
+        console.log('fileList=', fileList);
+        for (var i = 0; i < fileList.length; i++) {
+             var imgUrl = window.URL.createObjectURL(fileList[i]);
+             console.log('imgUrl=', imgUrl);
+             document.getElementById("showVideo").setAttribute("src", imgUrl);
+        }
+    }
+    function changePicture(){
+        var file = document.getElementById("picture");
+        var fileList = file.files; //获取的图片文件
+        console.log('fileList=', fileList);
+        for (var i = 0; i < fileList.length; i++) {
+             var imgUrl = window.URL.createObjectURL(fileList[i]);
+             console.log('imgUrl=', imgUrl);
+             document.getElementById("img2").setAttribute("src", imgUrl);
+        }
+    }
+</script>
+</html>
